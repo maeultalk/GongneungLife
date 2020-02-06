@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.maeultalk.actionbarsettingicon.MainActivity">
+    <item
+        android:id="@+id/action_search"
+        android:orderInCategory="98"
+        android:title="찾기"
+        android:icon="@drawable/ic_search_gray_24dp"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_refresh"
+        android:orderInCategory="99"
+        android:title="리프레쉬"
+        android:icon="@drawable/ic_refresh_black_24dp"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_add_place"
+        android:orderInCategory="99"
+        android:title="장소 등록"
+        android:icon="@drawable/ic_add_location_gray_24dp"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="설정"
+        android:icon="@drawable/ic_settings_gray_24dp"
+        app:showAsAction="always" />
+</menu>

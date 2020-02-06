@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "430304030941",
+    "firebase_url": "https://gongneunglife.firebaseio.com",
+    "project_id": "gongneunglife",
+    "storage_bucket": "gongneunglife.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:430304030941:android:a78f4bc9b863a514",
+        "android_client_info": {
+          "package_name": "com.maeultalk.gongneunglife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "430304030941-edcd89hukv2m3v6b0q90p762jnri47ek.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.maeultalk.gongneunglife",
+            "certificate_hash": "1799d02641c71151422dde2b93b044943612d507"
+          }
+        },
+        {
+          "client_id": "430304030941-1v7seo1f0fa56c2s8i0n4h9h5s7nptpd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQlqIlvpkFgU11lfq3_dSDd_3yA3jrebk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "430304030941-1v7seo1f0fa56c2s8i0n4h9h5s7nptpd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "430304030941-cdumvg8coadq6jbousr2cbqabthqenvp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.maeultalk.GongneungLife"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">#008577</color>-->
+    <color name="colorPrimary">#ffc107</color>
+    <!--<color name="colorPrimaryDark">#00574B</color>-->
+    <color name="colorPrimaryDark">#FFB300</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="colorPrimaryGray">#FFFFFF</color>
+    <color name="colorPrimaryDarkGray">#CCCCCC</color>
+
+    <color name="colorBottomNavi">#747274</color>
+
+    <color name="bright_red">#ff5e5e</color>
+
+    <color name="gray60">#606060</color>
+
+    <color name="intro_bg">#FAFAFA</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#0000ff</color>
+
+    <drawable name="selector_white">#FFFFFF</drawable>
+    <drawable name="selector_gray">#EEECEE</drawable>
+
+    <color name="intro_bg2">#FBF9FB</color>
+
+    <color name="indicator">#141214</color>
+
+</resources>

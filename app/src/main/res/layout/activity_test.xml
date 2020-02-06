@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".activity.TestActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/button_array"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="배열" />
+
+            <Button
+                android:id="@+id/button_load_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="이미지 로딩 테스트" />
+
+            <Button
+                android:id="@+id/button_youtube"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="유튜브" />
+
+            <Button
+                android:id="@+id/button_youtube2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="유튜브2" />
+
+            <Button
+                android:id="@+id/button_badge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:text="카운트 뱃지" />
+
+            <Button
+                android:id="@+id/button_pic_or_imgs2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="카메라 또는 앨범2" />
+
+            <Button
+                android:id="@+id/button_pic_or_imgs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="카메라 또는 앨범" />
+
+            <Button
+                android:id="@+id/button_pic_or_imgs3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="카메라 또는 앨범3" />
+
+            <Button
+                android:id="@+id/button_upload_gallery_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="갤러리 이미지 업로드" />
+
+            <Button
+                android:id="@+id/button_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="서치뷰 스터디" />
+
+            <Button
+                android:id="@+id/button_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="이미지 가져오기" />
+
+            <Button
+                android:id="@+id/button_listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="리스트뷰 스터디" />
+
+            <Button
+                android:id="@+id/button_matisse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="matisse" />
+
+            <Button
+                android:id="@+id/button_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="이메일 가입" />
+
+            <Button
+                android:id="@+id/button_email2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="이메일 가입2" />
+
+            <Button
+                android:id="@+id/button_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="회원가입" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

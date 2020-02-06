@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.maeultalk.gongneunglife">
+
+    <!-- 인터넷 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 카메라, 갤러리 이미지 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_gl2"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.IntroActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/NoActionbarTheme"
+            android:windowSoftInputMode="stateAlwaysHidden">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name=".activity.AskActivity" />
+        <activity
+            android:name=".activity.AnswerActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.AnswerActivity2"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".activity.AddPlaceActivity" />
+        <activity android:name=".activity.SettingsActivity" />
+        <activity android:name=".activity.TestActivity" />
+        <activity android:name=".activity.AndroidNotificationCountBadge" />
+        <activity android:name=".activity.ListviewStudyActivity" />
+        <activity
+            android:name=".activity.SearchSpotActivity"
+            android:theme="@style/NoActionbarTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".activity.SearchActivity"
+            android:theme="@style/NoActionbarTheme" />
+        <activity
+            android:name=".activity.PlaceActivity"
+            android:theme="@style/NoActionbarThemeWithTap" />
+        <activity android:name=".activity.AddContentActivity" />
+        <activity android:name=".activity.AddContentActivity2" />
+        <activity android:name=".activity.EditContentActivity" />
+        <activity android:name=".test.GetImagesActivity" />
+        <activity android:name=".test.GetPictureOrImagesActivity" />
+        <activity android:name=".test.GetPictureOrImagesActivity2" />
+        <activity android:name=".test.GetPictureOrImagesActivity3" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.maeultalk.gongneunglife.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- <activity android:name=".activity.UploadGalleryImageActivity" /> -->
+        <activity android:name=".test.MatisseActivity2" />
+        <activity android:name=".test.EmailConfirmActivity" />
+        <activity android:name=".test.LoginActivity2" />
+        <activity android:name=".test.EmailConfirmTestActivity" />
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity
+            android:name=".activity.CommentsActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="4mc67nxh6m" />
+
+        <activity
+            android:name=".activity.SearchResultActivity"
+            android:theme="@style/NoActionbarTheme" />
+        <activity android:name=".activity.InboxAdminActivity" />
+        <activity
+            android:name=".activity.CollectActivity"
+            android:theme="@style/NoActionbarTheme" />
+        <activity android:name=".activity.CollectAllActivity" />
+        <activity android:name=".activity.AddressActivity" />
+        <activity android:name=".activity.Address2Activity" />
+        <activity
+            android:name=".activity.MyActivity"
+            android:theme="@style/NoActionbarThemeWithTap" />
+        <activity android:name=".test.NetworkActivity" />
+        <activity android:name=".test.ArrayTestActivity" />
+        <activity android:name=".test.ImgLoadingTestActivity" />
+        <activity android:name=".test.YoutubeActivity" />
+        <activity android:name=".test.YoutubeRecyclerViewActivity"></activity>
+    </application>
+
+</manifest>
