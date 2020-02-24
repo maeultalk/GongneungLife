@@ -789,6 +789,7 @@ public class AddContentActivity2 extends AppCompatActivity {
 
         for(int i=0; i<imagePath.size(); i++) {
             File file = new File(imagePath.get(i));
+            Log.d("file", file.getAbsolutePath());
             RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
             String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
             int pos = file.getName().lastIndexOf( "." );

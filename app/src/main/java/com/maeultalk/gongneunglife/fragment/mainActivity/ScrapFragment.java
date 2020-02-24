@@ -25,6 +25,7 @@ import com.google.gson.reflect.TypeToken;
 import com.maeultalk.gongneunglife.R;
 import com.maeultalk.gongneunglife.activity.AddPlaceActivity;
 import com.maeultalk.gongneunglife.activity.MyActivity;
+import com.maeultalk.gongneunglife.activity.MyPageActivity;
 import com.maeultalk.gongneunglife.activity.PlaceActivity;
 import com.maeultalk.gongneunglife.activity.SettingsActivity;
 import com.maeultalk.gongneunglife.adapter.FavoriteAdapter;
@@ -136,7 +137,7 @@ public class ScrapFragment extends Fragment {
             startActivityForResult(intent, 400);
             return true;
         } else if (id == R.id.action_my) {
-            Intent intent = new Intent(getActivity(), MyActivity.class);
+            Intent intent = new Intent(getActivity(), MyPageActivity.class);
             startActivity(intent);
             return true;
         }
