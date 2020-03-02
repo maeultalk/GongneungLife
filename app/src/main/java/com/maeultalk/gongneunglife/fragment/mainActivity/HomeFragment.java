@@ -3,6 +3,8 @@ package com.maeultalk.gongneunglife.fragment.mainActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -55,6 +57,10 @@ public class HomeFragment extends Fragment {
 
     public static ArrayList<Content> contentsInHome = new ArrayList<>();
     public static ArrayList<Collect> collects = new ArrayList<>();
+
+    boolean firstLoad = true;
+
+    boolean isLoading = false;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -118,6 +124,7 @@ public class HomeFragment extends Fragment {
         // 가로 또는 세로 스크롤 목록 형식
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.addItemDecoration(new RecyclerViewDecoration(getActivity(), 12));
+        initScrollListener();
 
 //        loadData();
 
@@ -138,16 +145,63 @@ public class HomeFragment extends Fragment {
                     Gson gson = new Gson();
                     Type listType = new TypeToken<ArrayList<Content>>(){}.getType();
                     contentsInHome = gson.fromJson(jsonArray.toString(), listType);
-//                    Toast.makeText(getActivity(), response, Toast.LENGTH_SHORT).show();
 
-                    final JSONObject jsonResponse2 = new JSONObject(response);
-                    JSONArray jsonArray2 = (JSONArray) jsonResponse2.get("collects");
-                    Gson gson2 = new Gson();
-                    Type listType2 = new TypeToken<ArrayList<Collect>>(){}.getType();
-                    collects = gson2.fromJson(jsonArray2.toString(), listType2);
+                    if (firstLoad) {
+                        final JSONObject jsonResponse2 = new JSONObject(response);
+                        JSONArray jsonArray2 = (JSONArray) jsonResponse2.get("collects");
+                        Gson gson2 = new Gson();
+                        Type listType2 = new TypeToken<ArrayList<Collect>>(){}.getType();
+                        collects = gson2.fromJson(jsonArray2.toString(), listType2);
+                    }
 
 //                    updateUI();
                     setRecyclerView();
+
+                    firstLoad = false;
+                } catch (JSONException e) {
+
+                }
+
+            }
+        };
+
+        LoadContentsRequest loadContentsRequest = new LoadContentsRequest(user, responseListener);
+        RequestQueue queue = Volley.newRequestQueue(getActivity());
+        queue.add(loadContentsRequest);
+
+    }
+
+    private void loadDataMore() {
+
+        SharedPreferences pref = getActivity().getSharedPreferences("user", MODE_PRIVATE);
+        String user = pref.getString("email", "");
+
+        Response.Listener<String> responseListener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    final JSONObject jsonResponse = new JSONObject(response);
+                    JSONArray jsonArray = (JSONArray) jsonResponse.get("contents");
+                    Gson gson = new Gson();
+                    Type listType = new TypeToken<ArrayList<Content>>(){}.getType();
+                    ArrayList<Content> contents = new ArrayList<>();
+
+                    contents = gson.fromJson(jsonArray.toString(), listType);
+                    contentsInHome.addAll(contents);
+
+                    if (firstLoad) {
+                        final JSONObject jsonResponse2 = new JSONObject(response);
+                        JSONArray jsonArray2 = (JSONArray) jsonResponse2.get("collects");
+                        Gson gson2 = new Gson();
+                        Type listType2 = new TypeToken<ArrayList<Collect>>(){}.getType();
+                        collects = gson2.fromJson(jsonArray2.toString(), listType2);
+                    }
+
+                    adapter.notifyDataSetChanged();
+                    isLoading = false;
+
+                    contentsInHome.add(null);
+                    adapter.notifyItemInserted(contentsInHome.size());
                 } catch (JSONException e) {
 
                 }
@@ -183,9 +237,61 @@ public class HomeFragment extends Fragment {
         adapter = new RecyclerViewAdapter(getActivity(), HomeFragment.this, true, contentsInHome);
         recyclerView.setAdapter(adapter);
 
+        contentsInHome.add(null);
+        adapter.notifyDataSetChanged();
+//        adapter.notifyItemInserted(rowsArrayList.size() - 1);
+
         swipeRefreshLayout.setRefreshing(false);
 
 //        setData();
+    }
+
+    private void initScrollListener() {
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+                LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
+
+                if (!isLoading) {
+                    if (linearLayoutManager != null && linearLayoutManager.findLastVisibleItemPosition() == contentsInHome.size()) {
+                        //bottom of list!
+                        loadMore();
+                        isLoading = true;
+                    }
+                }
+            }
+        });
+
+
+    }
+
+    private void loadMore() {
+        /*rowsArrayList.add(null);
+        recyclerViewAdapter.notifyItemInserted(rowsArrayList.size() - 1);*/
+
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                contentsInHome.remove(contentsInHome.size() - 1);
+                int scrollPosition = contentsInHome.size() + 1;
+//                adapter.notifyItemRemoved(scrollPosition);
+
+                loadDataMore();
+
+
+            }
+        }, 1500);
+
+
     }
 
     private void setData(){

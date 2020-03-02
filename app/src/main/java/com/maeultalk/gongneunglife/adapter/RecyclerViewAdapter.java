@@ -26,6 +26,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -98,6 +99,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     public static final int VIEW_TYPE_NORMAL = 0;
     public static final int VIEW_TYPE_COLLECT = 1;
+    private final int VIEW_TYPE_LOADING = 2;
 
     public RecyclerViewAdapter(Context context, Fragment fragment, boolean callFromSpotHome, ArrayList<Content> contents){
         this.context = context;
@@ -112,16 +114,25 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         if (viewType == VIEW_TYPE_NORMAL) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_content, parent,false);
             return new NormalHolder(view, fragment);
-        } else {
+        } else if (viewType == VIEW_TYPE_COLLECT) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_collect, parent,false);
             return new CollectHolder(view);
+        } else {
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_loading, parent, false);
+            return new LoadingViewHolder(view);
         }
     }
 
     @Override
     public int getItemViewType(int position) {
         if (position!=1) {
-            return VIEW_TYPE_NORMAL;
+            final int pos2;
+            if(position ==0) {
+                pos2 = position;
+            } else {
+                pos2 = position-1;
+            }
+            return contentsInHome.get(pos2) == null ? VIEW_TYPE_LOADING : VIEW_TYPE_NORMAL;
         } else {
             return VIEW_TYPE_COLLECT;
         }
@@ -132,7 +143,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
         if (holder instanceof CollectHolder) {
 
-        } else {
+        } else if (holder instanceof NormalHolder) {
             final int pos2;
             if(position ==0) {
                 pos2 = position;
@@ -623,7 +634,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     // 데이터 셋의 크기를 리턴해줍니다.
     @Override
     public int getItemCount() {
-        return contentsInHome.size();
+        return contentsInHome.size() + 1;
 //        return 7;
     }
 
@@ -773,6 +784,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             imageView1022 = (ImageView) itemView.findViewById(R.id.imageView1022);
             textView_save = (TextView) itemView.findViewById(R.id.textView_save);
             border = (View) itemView.findViewById(R.id.border);
+        }
+    }
+
+    private class LoadingViewHolder extends RecyclerView.ViewHolder {
+
+        ProgressBar progressBar;
+
+        public LoadingViewHolder(@NonNull View itemView) {
+            super(itemView);
+            progressBar = itemView.findViewById(R.id.progressBar);
         }
     }
 
