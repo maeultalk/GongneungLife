@@ -3,13 +3,12 @@ package com.maeultalk.gongneunglife.adapter;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Typeface;
-import android.support.v7.view.ContextThemeWrapper;
-import android.support.v7.widget.AppCompatImageView;
-import android.support.v7.widget.PopupMenu;
-import android.util.DisplayMetrics;
+
+import androidx.appcompat.view.ContextThemeWrapper;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.PopupMenu;
+
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,7 +17,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,10 +24,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.maeultalk.gongneunglife.R;
-import com.maeultalk.gongneunglife.activity.CommentsActivity;
-import com.maeultalk.gongneunglife.activity.SearchSpotActivity;
 import com.maeultalk.gongneunglife.model.CommentModel;
-import com.maeultalk.gongneunglife.model.Place;
 import com.maeultalk.gongneunglife.request.DeleteCommentRequest;
 import com.maeultalk.gongneunglife.request.EditCommentRequest;
 

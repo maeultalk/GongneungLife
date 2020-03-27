@@ -1,9 +1,9 @@
 package com.maeultalk.gongneunglife.activity;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.maeultalk.gongneunglife.R;
 import com.maeultalk.gongneunglife.adapter.CollectAllAdapter;

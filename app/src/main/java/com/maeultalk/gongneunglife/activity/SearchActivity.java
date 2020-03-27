@@ -1,18 +1,14 @@
 package com.maeultalk.gongneunglife.activity;
 
-import android.app.ActionBar;
-import android.nfc.Tag;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.AppCompatActivity;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
+
+import androidx.appcompat.widget.Toolbar;
+
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.maeultalk.gongneunglife.R;
 

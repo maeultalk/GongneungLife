@@ -1,11 +1,10 @@
 package com.maeultalk.gongneunglife.fragment.mainActivity.scrapFragment;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,11 +18,9 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.maeultalk.gongneunglife.R;
 import com.maeultalk.gongneunglife.activity.PlaceActivity;
-import com.maeultalk.gongneunglife.adapter.FavoriteAdapter;
 import com.maeultalk.gongneunglife.adapter.PlaceFragmentAdapter;
 import com.maeultalk.gongneunglife.model.Favorite;
 import com.maeultalk.gongneunglife.request.LoadFavoritePlaceRequest;
-import com.maeultalk.gongneunglife.request.LoadFavoriteRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;

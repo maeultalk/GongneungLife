@@ -2,18 +2,13 @@ package com.maeultalk.gongneunglife.adapter;
 
 
 import android.content.Context;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.text.TextUtils;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.maeultalk.gongneunglife.fragment.mainActivity.scrapFragment.ContentsFragment;
 import com.maeultalk.gongneunglife.fragment.mainActivity.scrapFragment.PlaceFragment;
-import com.maeultalk.gongneunglife.fragment.placeActivity.InfoFragment;
-import com.maeultalk.gongneunglife.fragment.placeActivity.StoreFragment;
-import com.maeultalk.gongneunglife.fragment.placeActivity.TimeLineFragment;
 
 /**
  * A {@link FragmentPagerAdapter} that returns a fragment corresponding to

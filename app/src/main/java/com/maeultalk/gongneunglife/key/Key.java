@@ -5,7 +5,7 @@ public class Key {
     // API URL
     public static final String BASE_URL = "http://maeultalk.vps.phps.kr/app/";
 
-    public static final String URL_GET_CONTENTS = BASE_URL + "apis/get_contents.php";
+    public static final String URL_GET_CONTENTS = BASE_URL + "apis/android/get_contents.php";
     public static final String URL_GET_PLACE_CONTENTS = BASE_URL + "apis/get_place_contents.php";
     public static final String URL_ADD_PLACE = BASE_URL + "apis/add_place.php";
 //    public static final String URL_ADD_PLACE_OVERLAP = BASE_URL + "apis/add_place_overlap.php";

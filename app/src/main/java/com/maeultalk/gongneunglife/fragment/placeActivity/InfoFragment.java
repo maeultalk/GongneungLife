@@ -4,26 +4,23 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.UiThread;
+import androidx.annotation.NonNull;
+import androidx.annotation.UiThread;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.maeultalk.gongneunglife.R;
 import com.maeultalk.gongneunglife.activity.Address2Activity;
-import com.maeultalk.gongneunglife.activity.AddressActivity;
 import com.maeultalk.gongneunglife.model.Place;
 import com.maeultalk.gongneunglife.request.GetPlaceInfoRequest;
 import com.maeultalk.gongneunglife.request.GetPlaceRequest;
@@ -34,13 +31,8 @@ import com.naver.maps.map.NaverMap;
 import com.naver.maps.map.OnMapReadyCallback;
 import com.naver.maps.map.overlay.Marker;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.JSONStringer;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
 
 import static android.content.Context.MODE_PRIVATE;
 

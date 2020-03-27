@@ -1,11 +1,10 @@
 package com.maeultalk.gongneunglife.test;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.maeultalk.gongneunglife.R;
 import com.squareup.picasso.Picasso;
 

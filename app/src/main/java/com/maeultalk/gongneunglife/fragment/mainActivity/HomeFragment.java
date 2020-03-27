@@ -4,19 +4,18 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -25,7 +24,6 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.maeultalk.gongneunglife.R;
 import com.maeultalk.gongneunglife.RecyclerItem;
-import com.maeultalk.gongneunglife.activity.CollectActivity;
 import com.maeultalk.gongneunglife.adapter.RecyclerViewAdapter;
 import com.maeultalk.gongneunglife.model.Collect;
 import com.maeultalk.gongneunglife.util.RecyclerViewDecoration;
@@ -289,7 +287,7 @@ public class HomeFragment extends Fragment {
 
 
             }
-        }, 1500);
+        }, 1000);
 
 
     }

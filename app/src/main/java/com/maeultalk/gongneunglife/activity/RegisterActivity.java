@@ -2,10 +2,10 @@ package com.maeultalk.gongneunglife.activity;
 
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatDialog;
+import androidx.appcompat.app.AppCompatDialog;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;

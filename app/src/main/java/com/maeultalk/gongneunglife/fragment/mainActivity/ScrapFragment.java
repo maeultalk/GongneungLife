@@ -1,47 +1,30 @@
 package com.maeultalk.gongneunglife.fragment.mainActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.RecyclerView;
+import com.google.android.material.tabs.TabLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.maeultalk.gongneunglife.R;
-import com.maeultalk.gongneunglife.activity.AddPlaceActivity;
-import com.maeultalk.gongneunglife.activity.MyActivity;
 import com.maeultalk.gongneunglife.activity.MyPageActivity;
-import com.maeultalk.gongneunglife.activity.PlaceActivity;
 import com.maeultalk.gongneunglife.activity.SettingsActivity;
 import com.maeultalk.gongneunglife.adapter.FavoriteAdapter;
 import com.maeultalk.gongneunglife.adapter.ScrapPagerAdapter;
-import com.maeultalk.gongneunglife.adapter.SectionsPagerAdapter;
 import com.maeultalk.gongneunglife.model.Favorite;
-import com.maeultalk.gongneunglife.request.LoadFavoriteRequest;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-
-import static android.content.Context.MODE_PRIVATE;
 
 public class ScrapFragment extends Fragment {
 
@@ -57,12 +40,12 @@ public class ScrapFragment extends Fragment {
     View header;
 
     /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
+     * The {@link PagerAdapter} that will provide
      * fragments for each of the sections. We use a
      * {@link FragmentPagerAdapter} derivative, which will keep every
      * loaded fragment in memory. If this becomes too memory intensive, it
      * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
+     * {@link FragmentStatePagerAdapter}.
      */
     private ScrapPagerAdapter mSectionsPagerAdapter;
 

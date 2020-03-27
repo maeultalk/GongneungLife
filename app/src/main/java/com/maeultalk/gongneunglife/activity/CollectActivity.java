@@ -2,12 +2,12 @@ package com.maeultalk.gongneunglife.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v7.app.AppCompatActivity;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.android.volley.RequestQueue;
@@ -17,7 +17,6 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.maeultalk.gongneunglife.R;
 import com.maeultalk.gongneunglife.adapter.CollectRecyclerViewAdapter;
-import com.maeultalk.gongneunglife.adapter.RecyclerViewAdapter;
 import com.maeultalk.gongneunglife.model.Content;
 import com.maeultalk.gongneunglife.request.LoadCollectContentsRequest;
 import com.maeultalk.gongneunglife.util.RecyclerViewDecoration;

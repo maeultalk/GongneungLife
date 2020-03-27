@@ -2,12 +2,12 @@ package com.maeultalk.gongneunglife.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.Nullable;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -103,10 +103,10 @@ public class SearchSpotActivity extends AppCompatActivity {
         });
         searchView = (SearchView) searchItem.getActionView();
         searchView.setIconifiedByDefault(false);
-        View v = searchView.findViewById(android.support.v7.appcompat.R.id.search_plate);
+        View v = searchView.findViewById(androidx.appcompat.R.id.search_plate);
         v.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), android.R.color.transparent));
         int magId = getResources().getIdentifier("android:id/search_mag_icon", null, null);
-        ImageView magImage = (ImageView) searchView.findViewById(android.support.v7.appcompat.R.id.search_mag_icon);
+        ImageView magImage = (ImageView) searchView.findViewById(androidx.appcompat.R.id.search_mag_icon);
         magImage.setImageDrawable(null);
 //        magImage.setLayoutParams(new LinearLayout.LayoutParams(0, 0));
         if(flowFrom.equals("search")) {

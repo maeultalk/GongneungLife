@@ -5,7 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -22,7 +22,6 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.maeultalk.gongneunglife.R;
 import com.maeultalk.gongneunglife.request.AddPlaceRequest;
-import com.maeultalk.gongneunglife.request.AddPlaceTestRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
