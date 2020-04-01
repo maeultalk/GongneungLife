@@ -72,6 +72,17 @@
             android:paddingLeft="2dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
+            android:text="textView_spot"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+        <!--<TextView
+            android:id="@+id/textView_place"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="2dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:shadowColor="#000000"
             android:shadowDx="3.0"
             android:shadowDy="3.0"
@@ -79,7 +90,7 @@
             android:text="textView_spot"
             android:textColor="#ffffff"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold" />-->
 
 
         <ImageView
